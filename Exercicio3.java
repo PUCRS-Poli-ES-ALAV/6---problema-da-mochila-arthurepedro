@@ -3,7 +3,7 @@ import java.util.*;
 public class Exercicio3 {
     static List<Item> mochila(List<Item> opt) {
         List<Item> result = new ArrayList<>();
-        Queue<Item> items = new PriorityQueue<>((i, j) -> ((Float)(j.price/j.weight)).compareTo(i.price/i.weight));
+        Queue<Item> items = new PriorityQueue<>((i, j) -> ((Float)(j.value/j.weight)).compareTo(i.value/i.weight));
 
         items.addAll(opt);
         while (result.stream().mapToDouble(i -> i.weight).sum() < 5) {
@@ -19,15 +19,15 @@ public class Exercicio3 {
 }
 
 class Item {
-    public float price;
+    public float value;
     public float weight;
     public Item(float price, float weight) {
-        this.price = price;
+        this.value = price;
         this.weight = weight;
     }
 
     @Override
     public String toString() {
-        return "(price=" + price + ",weight=" + weight + ")";
+        return "(price=" + value + ",weight=" + weight + ")";
     }
 }
