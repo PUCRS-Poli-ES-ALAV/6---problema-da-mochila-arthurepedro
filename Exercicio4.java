@@ -17,10 +17,10 @@ public class Exercicio4 {
 
     static int backPackPD(int n, int c, Item[] itens) {
         int[][] maxTab = new int[n+1][c+1];
-        for (int i = 0; i < n; i++) {
+        /*for (int i = 0; i <= n; i++) {
             maxTab[i][0] = 0;
-        }
-        for (int i = 0; i < c; i++) {
+        }*/
+        for (int i = 0; i <= c; i++) {
             maxTab[0][i] = 0;
         }
 
@@ -53,6 +53,17 @@ public class Exercicio4 {
         System.out.println(backPackPD(10, 165, itens));
         System.out.println(its);
 
-        
+        System.out.println();
+
+        its = 0;
+        itens = new Item[6];
+        itens[0] = new Item(56,50);
+        itens[1] = new Item(59,50);
+        itens[2] = new Item(80,64);
+        itens[3] = new Item(64,46);
+        itens[4] = new Item(75,50);
+        itens[5] = new Item(17,5);
+        System.out.println(backPackPD(6, 190, itens));
+        System.out.println(its);
     }
 }
