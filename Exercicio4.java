@@ -50,8 +50,11 @@ public class Exercicio4 {
         itens[7] = new Item(85,84);
         itens[8] = new Item(89,87);
         itens[9] = new Item(82,72);
+        long begin = System.nanoTime();
         System.out.println(backPackPD(10, 165, itens));
+        long end = System.nanoTime();
         System.out.println(its);
+        System.out.println(end-begin);
 
         System.out.println();
 
@@ -63,7 +66,10 @@ public class Exercicio4 {
         itens[3] = new Item(64,46);
         itens[4] = new Item(75,50);
         itens[5] = new Item(17,5);
+        begin = System.nanoTime();
         System.out.println(backPackPD(6, 190, itens));
+        end = System.nanoTime();
         System.out.println(its);
+        System.out.println(end-begin);
     }
 }

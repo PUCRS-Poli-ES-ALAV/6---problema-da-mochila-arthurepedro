@@ -1,6 +1,8 @@
 import java.util.*;
 
 public class Exercicio3 {
+    static int its = 0;
+
     static List<Item> mochila(List<Item> opt, int cap) {
         List<Item> result = new ArrayList<>();
         Queue<Item> items = new PriorityQueue<>((i, j) -> ((Float)(j.value/j.weight)).compareTo(i.value/i.weight));
@@ -8,13 +10,15 @@ public class Exercicio3 {
         items.addAll(opt);
         while (result.stream().mapToDouble(i -> i.weight).sum() <= cap) {
             result.add(items.remove());
+            its++;
         }
 
         return result;
     }
 
     public static void main(String[] args) {
-        /*System.out.println(mochila(Arrays.asList(
+        long begin = System.nanoTime();
+        System.out.println(mochila(Arrays.asList(
             new Item(92, 23),
             new Item(57, 31),
             new Item(49, 29),
@@ -25,7 +29,12 @@ public class Exercicio3 {
             new Item(84, 85),
             new Item(87, 89),
             new Item(72, 82))
-            ,165)));*/
+        ,165));
+        long end = System.nanoTime();
+        System.out.println(its);
+        System.out.println(end-begin);
+        its = 0;
+        begin = System.nanoTime();
         System.out.println(mochila(Arrays.asList(
             new Item(50, 56),
             new Item(50, 59),
@@ -34,6 +43,9 @@ public class Exercicio3 {
             new Item(50, 75),
             new Item(5, 17)
         ), 190));
+        end = System.nanoTime();
+        System.out.println(its);
+        System.out.println(end-begin);
     }
 }
 
