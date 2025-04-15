@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Exercicio6 {
-    static long its;
+    static long its = 0;
     public static int ED(String s, String t, int i, int j) {
         its++;
 
@@ -26,7 +26,6 @@ public class Exercicio6 {
     }
 
     public static void main(String[] args) {
-        its = 0;
         String s1 = "Casablanca";
         String s2 = "Portentoso";
         System.out.println(ED(s1, s2, s1.length()-1, s2.length()-1));
